@@ -152,21 +152,27 @@
                                 </li><!-- /.nav-item -->
                             </ul><!-- /.dropdown-menu -->
                         </li><!-- /.nav-item -->
+
                         <li class="nav__item has-dropdown">
-                            <a href="#" data-toggle="dropdown"
-                                class="dropdown-toggle nav__item-link">Shop</a>
+                            @auth
+                            <a href="" data-toggle="dropdown" class="dropdown-toggle nav__item-link">{{ auth()->user()->name }}</a>
                             <ul class="dropdown-menu">
                                 <li class="nav__item">
-                                    <a href="shop.html" class="nav__item-link">Our Products</a>
-                                </li><!-- /.nav-item -->
-                                <li class="nav__item">
-                                    <a href="shop-single-product.html" class="nav__item-link">Products Single</a>
-                                </li><!-- /.nav-item -->
-                                <li class="nav__item">
-                                    <a href="cart.html" class="nav__item-link">Cart</a>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                    
                                 </li><!-- /.nav-item -->
                             </ul><!-- /.dropdown-menu -->
+                            @else
+                            <a href="{{ route('login') }}"
+                                class="nav__item-link">Login | Register</a>
+                            @endauth
+
+
                         </li><!-- /.nav-item -->
+
                         <li class="nav__item">
                             <a href="contact-us.html" class="nav__item-link">Contacts</a>
                         </li><!-- /.nav-item -->
