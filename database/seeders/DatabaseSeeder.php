@@ -9,14 +9,15 @@ use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    
+
     public function run()
     {
-        User::create([
+        /*User::create([
             'name' => 'Admin',
             'email' => 'admin@medcity.com',
             'password' => Hash::make('12345678'),
             'is_admin' => 1
-        ]);
+        ]);*/
+        $this->call(DoctorSeeder::class);
     }
 }
