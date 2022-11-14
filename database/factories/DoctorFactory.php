@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Doctor;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
-class DoctorFactory extends Factory
+class UserFactory extends Factory
 {
-    protected $model = Doctor::class;
+    protected $model = User::class;
     public function definition()
     {
         return [

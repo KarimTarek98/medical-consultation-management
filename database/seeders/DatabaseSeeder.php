@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
             'is_admin' => 1
         ]);*/
         $this->call(DoctorSeeder::class);
+        $this->call(LaratrustSeeder::class);
     }
 }

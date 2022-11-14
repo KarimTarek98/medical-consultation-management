@@ -72,8 +72,8 @@ return [
     | The key in the array is the name of the relationship inside the roles and permissions.
     |
     */
-    'doctor_models' => [
-        'doctors' => \App\Models\Doctor::class,
+    'user_models' => [
+        'users' => \App\Models\User::class,
     ],
 
     /*
@@ -117,9 +117,9 @@ return [
          */
         'teams' => 'teams',
 
-        'role_doctor' => 'role_doctor',
+        'role_user' => 'role_user',
 
-        'permission_doctor' => 'permission_doctor',
+        'permission_user' => 'permission_user',
 
         'permission_role' => 'permission_role',
     ],
@@ -136,7 +136,7 @@ return [
         /**
          * User foreign key on Laratrust's role_user and permission_user tables.
          */
-        'doctor' => 'doctor_id',
+        'user' => 'user_id',
 
         /**
          * Role foreign key on Laratrust's role_user and permission_role tables.
@@ -184,7 +184,7 @@ return [
              */
             'abort' => [
                 'code' => 403,
-                'message' => 'Doctor does not have any of the necessary access rights.'
+                'message' => 'User does not have any of the necessary access rights.'
             ],
 
             /**
@@ -309,7 +309,7 @@ return [
         | Enable/Disable the permissions assignment to the users.
         |
         */
-        'assign_permissions_to_doctor' => true,
+        'assign_permissions_to_user' => true,
 
         /*
         |--------------------------------------------------------------------------
