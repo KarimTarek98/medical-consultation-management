@@ -11,16 +11,11 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, LaratrustUserTrait;
-
-    protected $table = 'doctors';
+use HasApiTokens, HasFactory, Notifiable, LaratrustUserTrait;
     protected $fillable = [
         'name',
-        'username',
         'email',
         'password',
-        'address',
-        'phone_number'
     ];
 
 
